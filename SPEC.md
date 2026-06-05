@@ -16,6 +16,26 @@
 
 ## Installation
 
+### Option 1: npm install (Recommended)
+
+```bash
+npm install -g ./literature-search
+```
+
+### Option 2: Manual Copy
+
+Copy the `python/literature_search/` directory to your IDE's skills folder:
+
+- **Claude Code**: `~/.claude/skills/literature-search/`
+- **Cursor**: `~/.cursor/skills/literature-search/` or `.agents/skills/literature-search/`
+- **OpenCode**: `.agents/skills/literature-search/`
+
+### Option 3: pip install (Development)
+
+```bash
+pip install -e .
+```
+
 ### Step 1: Install Dependencies
 
 ```bash
@@ -47,10 +67,12 @@ export OPENALEX_API_KEY="your-key-here"
 
 **Note**: arXiv requires no API key.
 
-### Step 3: Verify Installation
+### Step 2: Verify Installation
 
 ```bash
 cd literature-search
+python -m literature_search --help
+# Or use the legacy script
 python scripts/combined_search.py --help
 ```
 
@@ -63,37 +85,20 @@ Expected output: Command-line argument help.
 ### Method 1: Python API (Recommended for Agents)
 
 ```python
-from scripts.combined_search import LiteratureSearcher
+from python.literature_search import LiteratureSearcher
 
 # Initialize
 searcher = LiteratureSearcher(
     output_dir="./outputs",      # Where to save results
     semantic_api_key=None,       # or pass key directly
 )
-
-# Search
-results = searcher.search(
-    keywords="deep learning",
-    year_min=2020,
-    year_max=2024,
-    category="cs.AI",            # arXiv category
-    authors=None,                # Optional: filter by author
-    max_results=50,              # Max papers to return
-    sources=None,                # None = all available APIs
-    output_format="markdown",    # markdown/json/csv/bibtex
-    save_to_file=True,           # Auto-save to output_dir
-)
-
-# Results structure
-print(f"Found {len(results['results'])} papers")
-print(f"Saved to: {results['output_file']}")
 ```
 
 ### Method 2: Command Line
 
 ```bash
 # Basic search
-python scripts/combined_search.py "deep learning" \
+python -m literature_search "deep learning" \
     --year-min 2020 \
     --year-max 2024 \
     --category cs.AI \
@@ -101,16 +106,19 @@ python scripts/combined_search.py "deep learning" \
     --output-dir ./outputs
 
 # Multi-keyword search
-python scripts/combined_search.py "federated learning" "privacy" \
+python -m literature_search "federated learning" "privacy" \
     --authors "Yann LeCun" \
     --format json \
     --max-results 100
 
 # Specific source only
-python scripts/combined_search.py "transformer" \
+python -m literature_search "transformer" \
     --sources semantic \
     --semantic-key "your-key" \
     --format markdown
+
+# Legacy script (backward compatible)
+python scripts/combined_search.py "deep learning" --year-min 2020
 ```
 
 ---
@@ -282,7 +290,9 @@ literature-search/
 ├── SPEC.md                          # This file (Agent instructions)
 ├── README.md                        # User guide (human-readable)
 ├── SKILL.md                         # Skill metadata
-├── scripts/
+├── python/literature_search/        # Core Python package
+│   ├── __init__.py                  # Package entry, exports LiteratureSearcher
+│   ├── __main__.py                  # Enables python -m literature_search
 │   ├── combined_search.py           # Main orchestrator
 │   ├── arxiv_searcher.py            # arXiv client
 │   ├── semantic_searcher.py         # Semantic Scholar client
@@ -292,10 +302,15 @@ literature-search/
 │   ├── core_searcher.py             # Core API client
 │   ├── openalex_searcher.py         # OpenAlex client
 │   └── result_formatter.py          # Output formatter
+├── scripts/                         # Legacy scripts (backward compatible)
 ├── references/
 │   ├── arxiv_categories.md          # Category reference
 │   ├── query_examples.md            # Query patterns
 │   └── api_limits.md                # Rate limits detail
+├── package.json                     # npm publish config
+├── .claude-skill.json               # Claude Code Skill metadata
+├── install-skill.js                 # Install script
+├── uninstall-skill.js               # Uninstall script
 └── outputs/                         # Auto-saved results
 ```
 
@@ -310,7 +325,7 @@ bash run_evals.sh  # If available
 
 ### Manual Test
 ```python
-from scripts.combined_search import LiteratureSearcher
+from python.literature_search import LiteratureSearcher
 
 searcher = LiteratureSearcher()
 results = searcher.search(

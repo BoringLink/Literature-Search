@@ -10,7 +10,7 @@
 
 ### 给 AI Agent 用户的提示
 
-> 💡 **提示**: 如果你正在使用 AI Agent（如 Claude、Cursor 等），可以直接告诉 Agent：
+> 💡 **提示**: 如果你正在使用 AI Agent（如 Claude Code、Cursor、OpenCode 等），可以直接告诉 Agent：
 >
 > **"请阅读 SPEC.md 文件，按照其中的安装和使用说明操作。"**
 >
@@ -18,9 +18,31 @@
 
 ---
 
-### 手动安装
+### 安装方式
 
-#### 1. 安装依赖
+#### 方式 1: npm 安装（推荐）
+
+```bash
+npm install -g ./literature-search
+```
+
+#### 方式 2: 手动复制
+
+将 `python/literature_search/` 目录复制到你的 IDE skills 文件夹：
+
+- **Claude Code**: `~/.claude/skills/literature-search/`
+- **Cursor**: `~/.cursor/skills/literature-search/` 或 `.agents/skills/literature-search/`
+- **OpenCode**: `.agents/skills/literature-search/`
+
+#### 方式 3: pip 安装（开发模式）
+
+```bash
+pip install -e .
+```
+
+---
+
+### 安装依赖
 
 ```bash
 pip install requests feedparser
@@ -51,9 +73,11 @@ export OPENALEX_API_KEY="your-key-here"
 
 **注意**: arXiv 不需要 API 密钥。
 
-#### 3. 测试安装
+#### 测试安装
 
 ```bash
+python -m literature_search --help
+# 或使用旧版脚本（向后兼容）
 python scripts/combined_search.py --help
 ```
 
@@ -64,45 +88,34 @@ python scripts/combined_search.py --help
 ### 方法 1: Python API（推荐）
 
 ```python
-from scripts.combined_search import LiteratureSearcher
+from python.literature_search import LiteratureSearcher
 
 # 初始化
 searcher = LiteratureSearcher(output_dir="./outputs")
-
-# 搜索论文
-results = searcher.search(
-    keywords="deep learning",
-    year_min=2020,
-    year_max=2024,
-    category="cs.AI",
-    max_results=50,
-    output_format="markdown",
-    save_to_file=True
-)
-
-print(f"找到 {len(results['results'])} 篇论文")
-print(f"结果保存到：{results['output_file']}")
 ```
 
 ### 方法 2: 命令行
 
 ```bash
 # 基础搜索
-python scripts/combined_search.py "deep learning" \
+python -m literature_search "deep learning" \
     --year-min 2020 \
     --year-max 2024 \
     --category cs.AI \
     --format markdown
 
 # 多关键词搜索
-python scripts/combined_search.py "federated learning" "privacy" \
+python -m literature_search "federated learning" "privacy" \
     --authors "Yann LeCun" \
     --format json
 
 # 指定 API 源
-python scripts/combined_search.py "transformer" \
+python -m literature_search "transformer" \
     --sources semantic \
     --max-results 100
+
+# 旧版脚本（向后兼容）
+python scripts/combined_search.py "deep learning" --year-min 2020
 ```
 
 ---
@@ -219,8 +232,11 @@ for kw in queries:
 literature-search/
 ├── SPEC.md                          # Agent 专用技术文档 ⭐
 ├── README.md                        # 本文件（用户使用指南）
+├── README_zh.md                     # 中文使用指南
 ├── SKILL.md                         # Skill 元数据
-├── scripts/                         # 核心搜索模块
+├── python/literature_search/        # 核心 Python 包
+│   ├── __init__.py                  # 包入口，导出 LiteratureSearcher
+│   ├── __main__.py                  # 支持 python -m literature_search
 │   ├── combined_search.py           # 主编排器
 │   ├── arxiv_searcher.py            # arXiv 客户端
 │   ├── semantic_searcher.py         # Semantic Scholar 客户端
@@ -230,10 +246,15 @@ literature-search/
 │   ├── core_searcher.py             # Core API 客户端
 │   ├── openalex_searcher.py         # OpenAlex 客户端
 │   └── result_formatter.py          # 输出格式化
+├── scripts/                         # 旧版脚本（向后兼容）
 ├── references/                      # 参考文档
 │   ├── arxiv_categories.md          # arXiv 分类参考
 │   ├── query_examples.md            # 查询示例
 │   └── api_limits.md                # API 限制详情
+├── package.json                     # npm 发布配置
+├── .claude-skill.json               # Claude Code Skill 元数据
+├── install-skill.js                 # 安装脚本
+├── uninstall-skill.js               # 卸载脚本
 └── outputs/                         # 自动保存的搜索结果
 ```
 
