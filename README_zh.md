@@ -1,8 +1,25 @@
-# Literature Search Skill
+<p align="center">
+  <img src="literature_search_logo.png" width="120" alt="Literature Search Logo">
+</p>
 
+<h1 align="center" style="font-size: 2.5em; margin: 0.2em 0;">Literature Search Agent</h1>
+
+<p align="center" style="font-size: 1.1em; color: #666; margin-bottom: 1.5em;">
 **多源学术论文检索工具** - 为论文写作和研究报告提供全面的文献发现能力。
-
+</p>
+<p align="center" style="font-size: 1.1em; color: #666; margin-bottom: 1.5em;">
 集成 **7 个学术 API**：arXiv、Semantic Scholar、SerpApi (Google Scholar)、Core API、知网 (CNKI)、百度千帆学术、OpenAlex。
+</p>
+
+<p align="center">
+  <span style="display:inline-block; padding:3px 10px; font-size:12px; font-weight:600; border-radius:12px; background:#28a745; color:#fff;">arXiv · Free</span>
+  <span style="display:inline-block; padding:3px 10px; font-size:12px; font-weight:600; border-radius:12px; background:#0366d6; color:#fff;">Semantic Scholar</span>
+  <span style="display:inline-block; padding:3px 10px; font-size:12px; font-weight:600; border-radius:12px; background:#0366d6; color:#fff;">Google Scholar</span>
+  <span style="display:inline-block; padding:3px 10px; font-size:12px; font-weight:600; border-radius:12px; background:#fd7e14; color:#fff;">CNKI 知网</span>
+  <span style="display:inline-block; padding:3px 10px; font-size:12px; font-weight:600; border-radius:12px; background:#0366d6; color:#fff;">Baidu Scholar</span>
+  <span style="display:inline-block; padding:3px 10px; font-size:12px; font-weight:600; border-radius:12px; background:#0366d6; color:#fff;">OpenAlex</span>
+  <span style="display:inline-block; padding:3px 10px; font-size:12px; font-weight:600; border-radius:12px; background:#0366d6; color:#fff;">Core</span>
+</p>
 
 ---
 
@@ -12,9 +29,8 @@
 
 > 💡 **提示**: 如果你正在使用 AI Agent（如 Claude Code、Cursor、OpenCode 等），可以直接告诉 Agent：
 >
-> **"请阅读 SPEC.md 文件，按照其中的安装和使用说明操作。"**
->
-> SPEC.md 是专门为 Agent 编写的完整技术文档，包含详细的安装步骤、API 配置、使用示例和最佳实践。Agent 会自动执行所有配置和搜索任务，无需你手动操作。
+> **Install Literature-Search Skill according to the following spec:
+> https://github.com/BoringLink/Literature-Search/SPEC.md**
 
 ---
 
