@@ -3,7 +3,5 @@
   "version": "0.1.0",
   "description": "Multi-source academic literature search tool integrating arXiv, Semantic Scholar, and other APIs",
   "entry_point": "python/literature_search/combined_search.py",
-  "runtime": "python3",
-  "install_script": "install-skill.js",
-  "uninstall_script": "uninstall-skill.js"
+  "runtime": "python3"
 }

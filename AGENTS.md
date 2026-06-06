@@ -7,6 +7,7 @@
 ## OVERVIEW
 
 学术文献检索 Agent Skill，集成 Serp API、百度千帆学术 API、知网研学开放平台 API、ArXiv API、Semantic Scholar API、Core API、OpenAlex API 进行多源文献检索。Python 3.8+ 项目，1700 行代码，10 个核心模块。
+Github仓库地址:https://github.com/BoringLink/Literature-Search
 
 ## STRUCTURE
 

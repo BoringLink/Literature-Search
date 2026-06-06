@@ -16,10 +16,10 @@
 
 ## Installation
 
-### Option 1: npm install (Recommended)
+### Option 1: npx skills add (Recommended)
 
 ```bash
-npm install -g ./literature-search
+npx skills add BoringLink/Literature-Search
 ```
 
 ### Option 2: Manual Copy

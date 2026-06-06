@@ -20,10 +20,10 @@
 
 ### 安装方式
 
-#### 方式 1: npm 安装（推荐）
+#### 方式 1: npx skills add（推荐）
 
 ```bash
-npm install -g ./literature-search
+npx skills add BoringLink/Literature-Search
 ```
 
 #### 方式 2: 手动复制

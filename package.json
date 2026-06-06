@@ -2,9 +2,9 @@
   "name": "literature-search",
   "version": "0.1.0",
   "description": "Multi-source academic literature search agent skill",
-  "main": "python/literature_search/__init__.py",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BoringLink/Literature-Search.git"
   },
   "keywords": [
     "agent-skill",
@@ -14,8 +14,5 @@
     "semantic-scholar"
   ],
   "author": "literature-search contributors",
-  "license": "MIT",
-  "engines": {
-    "node": ">=16.0.0"
-  }
+  "license": "MIT"
 }
