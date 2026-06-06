@@ -21,11 +21,12 @@
   <span style="display:inline-block; padding:3px 10px; font-size:12px; font-weight:600; border-radius:12px; background:#0366d6; color:#fff;">Core</span>
 </p>
 
+<p align="center">
+<a href="./README.md">English</a> | <a href="./README.zh.md">中文</a>
+</p>
 ---
 
 ## 🚀 快速开始
-
-### 给 AI Agent 用户的提示
 
 > 💡 **提示**: 如果你正在使用 AI Agent（如 Claude Code、Cursor、OpenCode 等），可以直接告诉 Agent：
 >

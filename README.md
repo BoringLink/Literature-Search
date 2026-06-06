@@ -21,12 +21,12 @@ Integrates **7 academic APIs**: arXiv, Semantic Scholar, SerpApi (Google Scholar
   <span style="display:inline-block; padding:3px 10px; font-size:12px; font-weight:600; border-radius:12px; background:#0366d6; color:#fff;">Core</span>
 </p>
 
-
+<p align="center">
+<a href="./README.md">English</a> | <a href="./README.zh.md">中文</a>
+</p>
 ---
 
 ## 🚀 QuickStart
-
-### For the user of AI Agent:
 
 > 💡 **Hint**: If you're using an AI agent (such as Claude Code, Cursor, OpenCode, etc.), you can simply tell the agent:
 >
