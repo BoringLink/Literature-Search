@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="literature_search_logo.png" width="120" alt="Literature Search Logo">
+  <img src="literature_search_logo.png" style="width:92%; max-width:900px; border-radius:8px;" alt="Literature Search Logo">
 </p>
 
 <h1 align="center" style="font-size: 2.5em; margin: 0.2em 0;">Literature Search Agent</h1>
@@ -12,19 +12,8 @@ Integrates **7 academic APIs**: arXiv, Semantic Scholar, SerpApi (Google Scholar
 </p>
 
 <p align="center">
-  <span style="display:inline-block; padding:3px 10px; font-size:12px; font-weight:600; border-radius:12px; background:#28a745; color:#fff;">arXiv · Free</span>
-  <span style="display:inline-block; padding:3px 10px; font-size:12px; font-weight:600; border-radius:12px; background:#0366d6; color:#fff;">Semantic Scholar</span>
-  <span style="display:inline-block; padding:3px 10px; font-size:12px; font-weight:600; border-radius:12px; background:#0366d6; color:#fff;">Google Scholar</span>
-  <span style="display:inline-block; padding:3px 10px; font-size:12px; font-weight:600; border-radius:12px; background:#fd7e14; color:#fff;">CNKI 知网</span>
-  <span style="display:inline-block; padding:3px 10px; font-size:12px; font-weight:600; border-radius:12px; background:#0366d6; color:#fff;">Baidu Scholar</span>
-  <span style="display:inline-block; padding:3px 10px; font-size:12px; font-weight:600; border-radius:12px; background:#0366d6; color:#fff;">OpenAlex</span>
-  <span style="display:inline-block; padding:3px 10px; font-size:12px; font-weight:600; border-radius:12px; background:#0366d6; color:#fff;">Core</span>
-</p>
-
-<p align="center">
 <a href="./README.md">English</a> | <a href="./README.zh.md">中文</a>
 </p>
----
 
 ## 🚀 QuickStart
 
