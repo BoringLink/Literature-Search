@@ -45,5 +45,6 @@ npm-debug.log
 yarn-error.log
 
 # Agent
+.sisyphus
 AGENTS.md
 AGENT.md

@@ -83,8 +83,6 @@ export OPENALEX_API_KEY="your-key-here"
 
 ```bash
 python -m literature_search --help
-# 或使用旧版脚本（向后兼容）
-python scripts/combined_search.py --help
 ```
 
 ---
@@ -119,9 +117,6 @@ python -m literature_search "federated learning" "privacy" \
 python -m literature_search "transformer" \
     --sources semantic \
     --max-results 100
-
-# 旧版脚本（向后兼容）
-python scripts/combined_search.py "deep learning" --year-min 2020
 ```
 
 ---
@@ -252,7 +247,6 @@ literature-search/
 │   ├── core_searcher.py             # Core API 客户端
 │   ├── openalex_searcher.py         # OpenAlex 客户端
 │   └── result_formatter.py          # 输出格式化
-├── scripts/                         # 旧版脚本（向后兼容）
 ├── references/                      # 参考文档
 │   ├── arxiv_categories.md          # arXiv 分类参考
 │   ├── query_examples.md            # 查询示例

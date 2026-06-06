@@ -72,8 +72,6 @@ export OPENALEX_API_KEY="your-key-here"
 ```bash
 cd literature-search
 python -m literature_search --help
-# Or use the legacy script
-python scripts/combined_search.py --help
 ```
 
 Expected output: Command-line argument help.
@@ -116,9 +114,6 @@ python -m literature_search "transformer" \
     --sources semantic \
     --semantic-key "your-key" \
     --format markdown
-
-# Legacy script (backward compatible)
-python scripts/combined_search.py "deep learning" --year-min 2020
 ```
 
 ---
@@ -302,7 +297,6 @@ literature-search/
 │   ├── core_searcher.py             # Core API client
 │   ├── openalex_searcher.py         # OpenAlex client
 │   └── result_formatter.py          # Output formatter
-├── scripts/                         # Legacy scripts (backward compatible)
 ├── references/
 │   ├── arxiv_categories.md          # Category reference
 │   ├── query_examples.md            # Query patterns
